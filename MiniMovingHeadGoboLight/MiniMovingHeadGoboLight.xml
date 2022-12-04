@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device image="MiniMovingHeadGoboLight.gif" type="DMXDevice" dmxcversion="3.2.3" ddfversion="1.2.0">
+    <information>
+        <model>Mini Moving Head Gobo Light 50W</model>
+        <vendor>Unknown</vendor>
+        <author>Patrick Lezy</author>
+        <mode>12 Channels</mode>
+        <electrical>
+            <static>50</static>
+            <!--dimmer>20</dimmer-->
+        </electrical>
+    </information>
+    <functions>
+        <position>
+            <pan dmxchannel="0" finedmxchannel="1">
+                <range range="540" />
+            </pan>
+            <tilt dmxchannel="2" finedmxchannel="3">
+                <range range="180" />
+            </tilt>
+        </position>
+        <colorwheel dmxchannel="4">
+            <step type="color" val="#FFFFFF" mindmx="0" maxdmx="9" caption="White" />
+            <step type="color" val="#FF0000" mindmx="10" maxdmx="19" caption="Red" />
+            <step type="color" val="#FFFF00" mindmx="20" maxdmx="29" caption="Yellow" />
+            <step type="color" val="#0000FF" mindmx="30" maxdmx="39" caption="Blue" />
+            <step type="color" val="#00FF00" mindmx="40" maxdmx="49" caption="Green" />
+            <step type="color" val="#FFA500" mindmx="50" maxdmx="59" caption="Orange" />
+            <step type="color" val="#FF00FF" mindmx="60" maxdmx="69" caption="Magenta " />
+            <step type="color" val="#00FFFF" mindmx="70" maxdmx="79" caption="Cyan" />
+            <step type="color" val="#7777FF" mindmx="80" maxdmx="89" caption="Cyan / Magenta" />
+            <step type="color" val="#FF5377" mindmx="90" maxdmx="99" caption="Magenta / Orange" />
+            <step type="color" val="#77D700" mindmx="100" maxdmx="109" caption="Orange / Green" />
+            <step type="color" val="#007777" mindmx="110" maxdmx="119" caption="Green / Blue" />
+            <step type="color" val="#777777" mindmx="120" maxdmx="129" caption="Blue / Yellow" />
+            <step type="color" val="#FF7700" mindmx="130" maxdmx="139" caption="Yellow / Red" />
+            <wheelrotation>
+                <range type="cw" mindmx="140" maxdmx="255" minval="0.1" maxval="1" />
+            </wheelrotation>
+        </colorwheel>
+
+        <gobowheel dmxchannel="5">
+            <goboshake />
+            <step type="open" mindmx="0"  maxdmx="7"  caption="Open" />
+            <step type="gobo" val="ICON-000529.png" mindmx="8"   maxdmx="15"  caption="Gobo 1 - Flowers" >
+                <range handler="goboshake" mindmx="72" maxdmx="79" minval="1" maxval="10" />
+            </step>
+            <step type="gobo" val="ICON-000013.png" mindmx="16"  maxdmx="23"  caption="Gobo 2 - Balls" >
+                <range handler="goboshake" mindmx="80" maxdmx="87" minval="1" maxval="10" />
+            </step>
+            <step type="gobo" val="ICON-000529.png" mindmx="24"  maxdmx="31"  caption="Gobo 3 - Mushrooms" >
+                <range handler="goboshake" mindmx="88" maxdmx="95" minval="1" maxval="10" />
+            </step>
+            <step type="gobo" val="ICON-000529.png" mindmx="32"  maxdmx="39"  caption="Gobo 4 - Leaves" >
+                <range handler="goboshake" mindmx="96" maxdmx="103" minval="1" maxval="10" />
+            </step>
+            <step type="gobo" val="ICON-000529.png" mindmx="40"  maxdmx="47"  caption="Gobo 5 - Triangles" >
+                <range handler="goboshake" mindmx="104" maxdmx="111" minval="1" maxval="10" />
+            </step>
+            <step type="gobo" val="ICON-000529.png" mindmx="48"  maxdmx="56"  caption="Gobo 6 - Rose" >
+                <range handler="goboshake" mindmx="112" maxdmx="119" minval="1" maxval="10" />
+            </step>
+            <step type="gobo" val="ICON-000529.png" mindmx="56"  maxdmx="63"  caption="Gobo 7 - Fan" >
+                <range handler="goboshake" mindmx="120" maxdmx="127" minval="1" maxval="10" />
+            </step>
+            <!--step type="open" mindmx="64"  maxdmx="71"  caption="Open" /-->
+            <goborotation>
+                <range  type= "cw" mindmx= "128" maxdmx= " 255" minval= "0.1" maxval= "5" />
+            </goborotation>            
+        </gobowheel>
+
+        <strobe dmxchannel="6">
+            <step type="open" mindmx="0" maxdmx="9" />
+            <range type="linear" mindmx="10" maxdmx="249" minval="0.3" maxval="50" />
+            <step type="open" mindmx="250" maxdmx="255" />
+        </strobe>
+        <dimmer dmxchannel="7">
+            <range type="linear" mindmx="0" maxdmx="127" minval="0" maxval="100" />
+        </dimmer>
+
+        <!-- Motor speeds -->
+        <ptspeed  dmxchannel= "8" > 
+            <range  type= "linear"  mindmx= "255"  maxdmx= "0"  minval= "0"  maxval= "100"  /> 
+        </ptspeed>
+
+        <!-- Auto modes-->
+        <rawstep  dmxchannel= "9" name="Auto modes"> 
+            <step mindmx="0"   maxdmx="59"   caption="Normal" /> 
+            <step mindmx="60"  maxdmx="84"   caption="Automatic mode 3" /> 
+            <step mindmx="85"  maxdmx="109"  caption="Automatic mode 2" /> 
+            <step mindmx="110" maxdmx="134"  caption="Automatic mode 1" /> 
+            <step mindmx="135" maxdmx="159"  caption="Automatic mode 0" /> 
+            <step mindmx="160" maxdmx="184"  caption="Voice control mode 3" /> 
+            <step mindmx="185" maxdmx="209"  caption="Voice control mode 2" /> 
+            <step mindmx="210" maxdmx="234"  caption="Voice control mode 1" /> 
+            <step mindmx="235" maxdmx="255"  caption="Voice control mode 0" /> 
+        </rawstep>
+        
+        <!-- Balancing + Reset function : Set 250-255 for 5seconds for reset-->
+        <rawstep  dmxchannel= "10" name="Swinging/Reset"> 
+            <step mindmx="0"   maxdmx="20"   caption="Fix" /> 
+            <step mindmx="21"  maxdmx="100"  caption="Pan Swing" /> 
+            <step mindmx="101" maxdmx="200"  caption="Tilt Swing" /> 
+            <step mindmx="201" maxdmx="249"  caption="Pan+Tilt Swing" /> 
+            <step mindmx="250" maxdmx="255"  caption="Reset" /> 
+        </rawstep>
+        
+        <!-- light strip -->
+        <colorwheel dmxchannel="11">
+            <step type="color" val="#000000" mindmx="0" maxdmx="4" caption="Off" />
+            <step type="color" val="#FF0000" mindmx="5" maxdmx="19" caption="Red" />
+            <step type="color" val="#00FF00" mindmx="20" maxdmx="34" caption="Green" />
+            <step type="color" val="#0000FF" mindmx="35" maxdmx="49" caption="Blue" />
+            <step type="color" val="#FFFF00" mindmx="50" maxdmx="64" caption="Yellow" />
+            <step type="color" val="#FF00FF" mindmx="65" maxdmx="69" caption="Magenta " />
+            <step type="color" val="#00FFFF" mindmx="80" maxdmx="94" caption="Cyan" />
+            <step type="color" val="#FFFFFF" mindmx="95" maxdmx="109" caption="White" />
+            
+            <step type="color" val="#777700" mindmx="110" maxdmx="119" caption="Red / Green" />
+            <step type="color" val="#FF0077" mindmx="125" maxdmx="129" caption="Red / Magenta" />
+            <step type="color" val="#FFAAAA" mindmx="140" maxdmx="139" caption="Red / White" />
+            <step type="color" val="#77FF77" mindmx="155" maxdmx="119" caption="Green / Yellow" />
+            <step type="color" val="#00FF77" mindmx="170" maxdmx="129" caption="Green / Cyan" />
+            <step type="color" val="#AAFFAA" mindmx="185" maxdmx="139" caption="Green / White" />
+            <step type="color" val="#7700FF" mindmx="200" maxdmx="119" caption="Blue / Magenta" />
+            <step type="color" val="#0077FF" mindmx="215" maxdmx="129" caption="Blue / Cyan" />
+            <step type="color" val="#AAAAFF" mindmx="230" maxdmx="139" caption="Blue / White" />
+            <wheelrotation>
+                <range type="cw" mindmx="245" maxdmx="255" minval="0" maxval="10" />
+            </wheelrotation>
+        </colorwheel>
+    </functions>
+</device>
