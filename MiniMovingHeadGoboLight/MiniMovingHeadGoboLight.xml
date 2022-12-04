@@ -16,7 +16,7 @@
                 <range range="540" />
             </pan>
             <tilt dmxchannel="2" finedmxchannel="3">
-                <range range="180" />
+                <range range="210" />
             </tilt>
         </position>
         <colorwheel dmxchannel="4">
