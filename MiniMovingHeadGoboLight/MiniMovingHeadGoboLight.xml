@@ -95,16 +95,17 @@
             <step mindmx="210" maxdmx="234"  caption="Voice control mode 1" /> 
             <step mindmx="235" maxdmx="255"  caption="Voice control mode 0" /> 
         </rawstep>
-        
+
         <!-- Balancing + Reset function : Set 250-255 for 5seconds for reset-->
         <rawstep  dmxchannel= "10" name="Swinging/Reset"> 
             <step mindmx="0"   maxdmx="20"   caption="Fix" /> 
             <step mindmx="21"  maxdmx="100"  caption="Pan Swing" /> 
             <step mindmx="101" maxdmx="200"  caption="Tilt Swing" /> 
             <step mindmx="201" maxdmx="249"  caption="Pan+Tilt Swing" /> 
-            <step mindmx="250" maxdmx="255"  caption="Reset" /> 
+            <!-- Reset is done in procedures -->
+            <!--step mindmx="250" maxdmx="255"  caption="Reset" /--> 
         </rawstep>
-        
+
         <!-- light strip -->
         <colorwheel dmxchannel="11">
             <step type="color" val="#000000" mindmx="0" maxdmx="4" caption="Off" />
@@ -115,7 +116,7 @@
             <step type="color" val="#FF00FF" mindmx="65" maxdmx="69" caption="Magenta " />
             <step type="color" val="#00FFFF" mindmx="80" maxdmx="94" caption="Cyan" />
             <step type="color" val="#FFFFFF" mindmx="95" maxdmx="109" caption="White" />
-            
+
             <step type="color" val="#777700" mindmx="110" maxdmx="119" caption="Red / Green" />
             <step type="color" val="#FF0077" mindmx="125" maxdmx="129" caption="Red / Magenta" />
             <step type="color" val="#FFAAAA" mindmx="140" maxdmx="139" caption="Red / White" />
@@ -130,4 +131,11 @@
             </wheelrotation>
         </colorwheel>
     </functions>
+    <procedures>
+        <reset>
+            <set dmxchannel="10" value="255"/>
+            <hold value="6000"/>
+            <restore dmxchannel="10"/>
+        </reset>
+    </procedures>
 </device>
