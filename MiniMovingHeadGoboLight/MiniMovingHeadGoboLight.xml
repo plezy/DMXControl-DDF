@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<device image="MiniMovingHeadGoboLight.gif" type="DMXDevice" dmxcversion="3.2.3" ddfversion="1.2.0">
+<device image="MiniMovingHeadGoboLight.gif" type="DMXDevice"  dmxaddresscount="12" dmxcversion="3.2.3" ddfversion="1.2.0">
     <information>
         <model>Mini Moving Head Gobo Light 50W</model>
         <vendor>Unknown</vendor>
